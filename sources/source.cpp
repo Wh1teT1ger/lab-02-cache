@@ -10,7 +10,9 @@ inline T const& fun(T const& value) {
 void direct_passage(size_t size_kb) {
   size_t size = size_kb * 256;
   int* arr = new int[size];
-  for (size_t i = 0; i < size; i += 16) arr[i] = rand();
+  std::mt19937 gen(time(0));
+  std::uniform_int_distribution<> uid(0, 32767);
+  for (size_t i = 0; i < size; i += 16) arr[i] = uid(gen);
   for (size_t i = 0; i < size; i += 16) fun(arr[i]);
   auto start = std::chrono::steady_clock::now();
   for (size_t j = 0; j < 1000; j++) {
@@ -26,7 +28,9 @@ void direct_passage(size_t size_kb) {
 void back_passage(size_t size_kb) {
   size_t size = size_kb * 256;
   int* arr = new int[size];
-  for (size_t i = 0; i < size; i += 16) arr[i] = rand();
+  std::mt19937 gen(time(0));
+  std::uniform_int_distribution<> uid(0, 32767);
+  for (size_t i = 0; i < size; i += 16) arr[i] = uid(gen);
   for (int i = size - 15; i > 0; i -= 16) fun(arr[i]);
   auto start = std::chrono::steady_clock::now();
   for (size_t j = 0; j < 1000; j++) {
@@ -44,7 +48,9 @@ void back_passage(size_t size_kb) {
 void random_passage(size_t size_kb) {
   size_t size = size_kb * 256;
   int* arr = new int[size];
-  for (size_t i = 0; i < size; i += 16) arr[i] = rand();
+  std::mt19937 gen(time(0));
+  std::uniform_int_distribution<> uid(0, 32767);
+  for (size_t i = 0; i < size; i += 16) arr[i] = uid(gen);
   for (size_t i = 0; i < size; i += 16) fun(arr[i]);
   auto start = std::chrono::steady_clock::now();
   for (size_t j = 0; j < 1000; j++) {
