@@ -6,49 +6,49 @@ investigation:
       input_data:
         buffer_size: "64kb"
       results:
-        duration: "3215.91 ns"
+        duration: "3215.91 ms"
   - experiment:
       number: 2
       input_data:
         buffer_size: "128kb"
       results:
-        duration: "6618.62 ns"
+        duration: "6618.62 ms"
   - experiment:
         number: 3
         input_data:
           buffer_size: "256kb"
         results:
-          duration: "10376.1 ns"
+          duration: "10376.1 ms"
   - experiment:
         number: 4
         input_data:
           buffer_size: "512kb"
         results:
-          duration: "25185.5 ns"
+          duration: "25185.5 ms"
   - experiment:
         number: 5
         input_data:
           buffer_size: "1024kb"
         results:
-          duration: "44028.3 ns"
+          duration: "44028.3 ms"
   - experiment:
           number: 6
           input_data:
             buffer_size: "2048kb"
           results:
-            duration: "118664 ns"
+            duration: "118664 ms"
   - experiment:
           number: 7
           input_data:
             buffer_size: "4096kb"
           results:
-            duration: "187137 ns"
+            duration: "187137 ms"
   - experiment:
           number: 8
           input_data:
             buffer_size: "6144kb"
           results:
-            duration: "292266 ns"
+            duration: "292266 ms"
             
 investigation:
   travel_variant: "back"
@@ -58,49 +58,49 @@ investigation:
       input_data:
         buffer_size: "64kb"
       results:
-        duration: "2400.89 ns"
+        duration: "2400.89 ms"
   - experiment:
       number: 2
       input_data:
         buffer_size: "128kb"
       results:
-        duration: "4815.16 ns"
+        duration: "4815.16 ms"
   - experiment:
         number: 3
         input_data:
           buffer_size: "256kb"
         results:
-          duration: "9608.16 ns"
+          duration: "9608.16 ms"
   - experiment:
         number: 4
         input_data:
           buffer_size: "512kb"
         results:
-          duration: "19150.4 ns"
+          duration: "19150.4 ms"
   - experiment:
         number: 5
         input_data:
           buffer_size: "1024kb"
         results:
-          duration: "42329.2 ns"
+          duration: "42329.2 ms"
   - experiment:
           number: 6
           input_data:
             buffer_size: "2048kb"
           results:
-            duration: "97283.9 ns"
+            duration: "97283.9 ms"
   - experiment:
           number: 7
           input_data:
             buffer_size: "4096kb"
           results:
-            duration: "244491 ns"
+            duration: "244491 ms"
   - experiment:
           number: 8
           input_data:
             buffer_size: "6144kb"
           results:
-            duration: "293335 ns"
+            duration: "293335 ms"
             
 investigation:
   travel_variant: "random"
@@ -110,48 +110,48 @@ investigation:
       input_data:
         buffer_size: "64kb"
       results:
-        duration: "10044.4 ns"
+        duration: "10044.4 ms"
   - experiment:
       number: 2
       input_data:
         buffer_size: "128kb"
       results:
-        duration: "21710.6 ns"
+        duration: "21710.6 ms"
   - experiment:
         number: 3
         input_data:
           buffer_size: "256kb"
         results:
-          duration: "40239.5 ns"
+          duration: "40239.5 ms"
   - experiment:
         number: 4
         input_data:
           buffer_size: "512kb"
         results:
-          duration: "89105.8 ns"
+          duration: "89105.8 ms"
   - experiment:
         number: 5
         input_data:
           buffer_size: "1024kb"
         results:
-          duration: "204564 ns"
+          duration: "204564 ms"
   - experiment:
           number: 6
           input_data:
             buffer_size: "2048kb"
           results:
-            duration: "372381 ns"
+            duration: "372381 ms"
   - experiment:
           number: 7
           input_data:
             buffer_size: "4096kb"
           results:
-            duration: "1285480 ns"
+            duration: "1285480 ms"
   - experiment:
           number: 8
           input_data:
             buffer_size: "6144kb"
           results:
-            duration: "2111820 ns"
+            duration: "2111820 ms"
 
 ![Cache](./images/graph.png)

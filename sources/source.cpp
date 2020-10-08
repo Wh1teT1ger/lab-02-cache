@@ -2,15 +2,19 @@
 
 #include <header.hpp>
 
+template <typename T>
+inline T const& fun(T const& value) {
+  return value;
+}
+
 void direct_passage(size_t size_kb) {
   size_t size = size_kb * 256;
-  //int k = 0;
   int* arr = new int[size];
   for (size_t i = 0; i < size; i += 16) arr[i] = rand();
-  for (size_t i = 0; i < size; i += 16) & arr[i];
+  for (size_t i = 0; i < size; i += 16) fun(arr[i]);
   auto start = std::chrono::steady_clock::now();
   for (size_t j = 0; j < 1000; j++) {
-    for (size_t i = 0; i < size; i += 16) & arr[i];
+    for (size_t i = 0; i < size; i += 16) fun(arr[i]);
   }
   auto end = std::chrono::steady_clock::now();
   std::chrono::duration<double> elapsed_seconds = end - start;
@@ -21,14 +25,13 @@ void direct_passage(size_t size_kb) {
 
 void back_passage(size_t size_kb) {
   size_t size = size_kb * 256;
-  //int k = 0;
   int* arr = new int[size];
   for (size_t i = 0; i < size; i += 16) arr[i] = rand();
-  for (int i = size - 15; i > 0; i -= 16) & arr[i];
+  for (int i = size - 15; i > 0; i -= 16) fun(arr[i]);
   auto start = std::chrono::steady_clock::now();
   for (size_t j = 0; j < 1000; j++) {
     for (int i = size - 15; i > 0; i -= 16) {
-      &arr[i];
+      fun(arr[i]);
     }
   }
   auto end = std::chrono::steady_clock::now();
@@ -40,14 +43,13 @@ void back_passage(size_t size_kb) {
 
 void random_passage(size_t size_kb) {
   size_t size = size_kb * 256;
-  //int k = 0;
   int* arr = new int[size];
   for (size_t i = 0; i < size; i += 16) arr[i] = rand();
-  for (size_t i = 0; i < size; i += 16) & arr[i];
+  for (size_t i = 0; i < size; i += 16) fun(arr[i]);
   auto start = std::chrono::steady_clock::now();
   for (size_t j = 0; j < 1000; j++) {
     for (size_t i = 0; i < size / 16; i++) {
-      & arr[rand() % (size / 16) * 16];
+      fun(arr[rand() % (size / 16) * 16]);
     }
   }
   auto end = std::chrono::steady_clock::now();
